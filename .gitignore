@@ -1,0 +1,13 @@
+.metadata/
+.settings/
+.classpath
+.project
+*/target/*
+Servers2/*
+*/.springBeans
+*.class
+MANIFEST.MF
+enrollment-web/WebContent/WEB-INF/classes/*
+target/*
+*/.clover/*
+/enrollment-web/velocity.log

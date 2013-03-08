@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.troy.software.education</groupId>
+	<artifactId>enrollment</artifactId>	
+	<name>enrollment</name>
+	<description>Enterprise Archive for enrollment</description>
+	<packaging>ear</packaging>
+	<version>1.0.0-SNAPSHOT</version>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<configuration>
+					<displayName>students</displayName>
+					<earSourceExcludes>META-INF/**/*</earSourceExcludes>
+					<version>1.4</version>
+					<modules>						
+						<webModule>
+							<groupId>com.troy.software.education</groupId>
+							<artifactId>enrollment-web</artifactId>
+							<contextRoot>/enrollment-web</contextRoot>
+							<bundleFileName>enrollment-web.war</bundleFileName>
+						</webModule>								
+					</modules>
+				</configuration>
+			</plugin>			
+		</plugins>		
+	</build>
+	
+	<dependencies>			
+		<!--
+		Only one internal dependency should be present to the switch (cis-controller)
+		-->
+		
+		<dependency>
+			<groupId>com.troy.software.education</groupId>
+			<artifactId>enrollment-web</artifactId>	
+			<type>war</type>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+	
+</project>
